@@ -1,0 +1,40 @@
+{%extends 'adminpanel.html'%}
+
+{%block admin%}
+<p style="font-size: xx-large; font-weight: bolder;">ADD CATEGORY HERE</p>
+<form action="add_category" method="post">
+    {% csrf_token %}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th><h4>CATEGORY NAME</h4></th>
+            <th scope="col"><input type="text" placeholder="category " name="category"></th>
+            <th style="color: red;">{{error}}</th>
+        
+
+          </tr>
+          <tr>
+            <th></th>
+            <th><h4></h4></th>
+            <th scope="col"><input type="submit" value="add category" class="btn btn-info"></th>
+        
+
+          </tr>
+
+        </thead>
+
+
+        
+      </table>
+
+
+
+</form>
+
+
+
+
+
+{%endblock%}

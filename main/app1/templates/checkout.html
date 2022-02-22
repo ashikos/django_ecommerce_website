@@ -1,0 +1,52 @@
+{%extends 'adminpanel.html'%}
+
+{%block admin%}
+<form action="">
+
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">CHECKOUTS</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th scope="col">PRODUCT</th>
+            <th scope="col">CUSTOMER</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">QUANTITY</th>
+            <th>DATE</th>
+            <th>STATUS</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for checkout in checkouts%}
+            <tr>
+            <td>{{checkout.product.name}}</td>
+            <td>{{checkout.customer.username}}</td>
+            <td>{{checkout.price}}</td>
+            <td>{{checkout.quantity}}</td>
+            <td>{{checkout.date}}</td>
+            {%if checkout.status%}
+                <td>completed</td>
+                {%else%}
+                <td>pending</td>
+                {%endif%}
+                <td><input type="button" class="btn btn-success" value="Edit"></td>
+                <td><input type="button" class="btn btn-danger" value="delete"></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+      </table>
+
+
+
+
+
+
+</form>
+{%endblock%}

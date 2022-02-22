@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+
+    <title>admin panel</title>
+    
+  </head>
+  <body style="background-color: rgb(219, 216, 216);">
+
+    <!--navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand ml-3" href="/" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: white;"><h2><b>Flipzon admin panel</b></h2></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto my-lg-0"  >
+          
+
+          
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" href="/">view site</a>
+        </li>
+          
+         
+          <li class="nav-item">
+            <a class="nav-link"style="color: white;" href="signup">signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"style="color: white;" href="admin">admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"style="color: white;" href="logout">logout</a>
+          </li>
+         
+
+
+
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="mr-3">
+      <div class="row mt-5">
+
+        <div class="col-lg-4 " >
+          <ul id="ul1" >
+                
+            <a href="product_admin" style="text-decoration: none;"><li class="list-group-item align-items-center " style="border: solid;
+              border-color: black; color: black; font-weight: bolder ; text-align: center;" ><h5>Product</h5></li></a>
+            <a href="customer" style="text-decoration: none;"><li class="list-group-item align-items-center " style="border: solid;
+              border-color: black; color: black; font-weight: bolder ; text-align: center;" ><h5>Customer</h5></li></a>
+            <a href="category" style="text-decoration: none;"><li class="list-group-item align-items-center " style="border: solid;
+                border-color: black; color: black; font-weight: bolder ; text-align: center;" ><h5>Category</h5></li></a>
+             
+            <a href="checkout" style="text-decoration: none;"><li class="list-group-item align-items-center " style="border: solid;
+                border-color: black; color: black; font-weight: bolder ; text-align: center;" ><h5>checkouts</h5></li></a>    
+            
+          </ul>
+        </div>
+        <div class="col-lg-8">
+
+          {%block admin%}
+
+
+          {%endblock%}
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+</body>
+</html>

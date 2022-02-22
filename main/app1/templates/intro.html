@@ -1,0 +1,110 @@
+   
+{%extends 'base.html'%}
+{%block contend%}
+    <!doctype html>
+<html lang="en">
+  <head>
+    {%load static%}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'css/intro.css'%}" rel="stylesheet" />
+    <title>Hello, world!</title>
+  </head>
+  <body style="background-color: rgb(219, 216, 216); ">
+
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center  p-5">
+
+            <!--image-->
+            <div class="col-md-9 col-lg-6 col-xl-5 align-items-center" style="padding-top: 100px; padding-left: 50px;" >
+                <p style=" margin-left: 50px; color: cornflowerblue; font-size: 45px; font-weight:  bolder; "><a href="/" id="fazon">- FlipzoN -</a></p>
+                <div style="margin-top: -28px;margin-left: 40px; font-weight: bolder;">
+                  <p>your perfect shoping partner</p>
+                </div>
+
+            </div>
+
+            <!--login form-->
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-" style="padding-top: 50px; border-width: 2px;border: ridge;
+             border-color: grey; background-color: rgb(241, 250, 250);padding: 30px;">
+              <form method="post" action="intro">
+                {% csrf_token %}
+                <div >
+                  
+                    <h6 style="color: red;">{{error_msg}}</h6 >
+                  
+                </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="text"  class="form-control form-control-lg"
+                    placeholder="username" name="username"/>
+                  <label class="form-label" >username</label>
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <input type="password"  class="form-control form-control-lg"
+                    placeholder="Enter password" name="password"/>
+                  <label class="form-label" >Password</label>
+                </div>
+      
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                      Remember me
+                    </label>
+                  </div>
+                  <a href="#!" class="text-body">Forgot password?</a>
+                </div>
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <input type="submit" value="login" class="btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="reg"
+                      class="link-danger">Register</a></p>
+                      
+                </div>
+      
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+          <!-- Copyright -->
+          <div class="text-white mb-3 mb-md-0">
+            Copyright © 2020. All rights reserved.
+          </div>
+
+
+          
+        </div>
+      </section>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+{%endblock%}
+    
+
+
+
+
+

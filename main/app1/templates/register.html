@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Register</title>
+  </head>
+  <body class="bg-light"> 
+
+    <!--register-->
+
+    <div class="container pt-3">
+        <div style="padding: 20px;background-color: lavender;width: 550px;margin-left: 27%;border: solid grey;">
+            <div style="width: 500px; margin-top: 10pxpx; background-color: lavender;">
+                <form  action="create" method="POST" >
+                  {% csrf_token %}
+                    <div><h3>Create account</h3></div>
+                    <div > 
+                      {%for message in messages%}
+                      <p style="color: red;">*{{message}}</p>
+                      {%endfor%}
+                    </div>
+                    <div class="pt-3">                    <div class="form-group " style="float: left;width: 240px;">
+                        <label >first name</label>
+                        <input type="text" class="form-control"   name="first_name">
+                        
+                      </div>
+                      <div class="form-group " style="float: left;margin-left: 10px;width: 250px;">
+                        <label >lastname</label>
+                        <input type="text" class="form-control" name="last_name"  >
+                        
+                      </div></div>
+                      <div class="pt-3">                    <div class="form-group " style="float: left;width: 240px;">
+                        <label >username</label>
+                        <input required type="text" class="form-control" placeholder="username"  name="username">
+                        
+                      </div>
+                      <div class="form-group " style="float: left;margin-left: 10px;width: 250px;">
+                        <label >phone number</label>
+                        <input type="number" class="form-control" placeholder="mobile" name="phone"  >
+                        
+                      </div></div>
+                    <div class="form-group" >
+                      <label >Email address</label>
+                      <input required type="email" name="email" class="form-control" aria-describedby="emailHelp"  placeholder="example@gmail.com">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group" style="float: left;width: 240px;">
+                        <label >password</label>
+                        <input type="password" class="form-control"   name="password1">
+                        
+                      </div>
+                      <div class="form-group" style="float: left;margin-left: 10px;width: 250px;">
+                        <label >confirm password</label>
+                        <input type="password" class="form-control" name="password2"  >
+                        
+                      </div>
+    
+                    <input type="submit" value="Signup">
+                  </form>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">already have an accouny <a href="intro"
+                    class="link-danger">click here</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

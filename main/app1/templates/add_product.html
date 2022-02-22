@@ -1,0 +1,84 @@
+{%extends 'adminpanel.html'%}
+
+{%block admin%}
+<p style="font-size: xx-large; font-weight: bolder;">ADD PRODUCTS HERE</p>
+<form action="add_product" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th><h4>Product name</h4></th>
+            <th scope="col"><input type="text" placeholder="product name" name="product"></th>
+            <th>{{error_product}}</th>
+
+          </tr>
+          <tr>
+            <th></th>
+            <th><h4>Category</h4></th>
+            <th scope="col">  
+              
+              <select name="category" > 
+                <option  >Choose</option>
+                {%for category in categories%}
+              <option value="{{category.id}}">{{category.name}}</option>
+                {%endfor%}
+
+              </select>
+            </th>
+            <th>{{error_category}}</th>
+        
+
+          </tr>
+          <tr>
+            <th></th>
+            <th><h4>Price</h4></th>
+            <th><input type="number" name="price" placeholder="Price"></th>
+          </tr>
+          <tr>
+            <tr>
+              <th></th>
+              <th><h4>Color</h4></th>
+              <th>
+                <select name="color" > 
+                  <option value="" >Choose</option>
+                  {%for color in colors%}
+                <option value="{{color.id}}">{{color}}</option>
+                  {%endfor%}
+  
+                </select>
+              </th>
+            </tr>
+            <tr>
+              <tr>
+                <th></th>
+                <th><h4>Description</h4></th>
+                <th><textarea  name="description" rows="4" cols="50">
+                  
+                  </textarea></th>
+              </tr>
+              <tr>
+                <th></th>
+                <th><h4>upload image</h4></th>
+                <th><input type="file" name="image" ></th>
+              </tr>
+              <tr>
+            <th></th>
+            <th></th>
+            <th><input type="submit" value="save product" class="btn btn-info"></th>
+          </tr>
+        </thead>
+
+
+        
+      </table>
+
+
+
+</form>
+
+
+
+
+
+{%endblock%}

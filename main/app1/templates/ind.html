@@ -1,0 +1,127 @@
+{%extends 'base.html'%}
+
+{% block contend%}
+{% load static%}
+{%load cart%}
+
+<div class="" style="background-color: rgb(228, 222, 222);">
+  <div class="row">
+
+    <div class="container col-lg-3 ">
+      <div class="row">
+
+        
+          <ul id="ul1" >
+            <a href="/?category={{category.id}}" style="text-decoration: none;"><li class="list-group-item " >show all products</li></a>
+            {%for category in categories%}
+            <a href="/?category={{category.id}}" style="text-decoration: none;"><li class="list-group-item" >{{category.name}}</li></a>
+            {%endfor%}
+          </ul>
+        
+        
+        </div>
+
+      
+    </div>
+    
+      <div class="container col-lg-9">
+        
+      <div class="row ml-2 ">
+        <img style="width: 950px;height: 400px; margin: 30px;" 
+        src="https://img.paisawapas.com/ovz3vew9pw/2019/09/26135057/Flipkart-Big-Billion-Day-Budget-Electronics-never-before-Sale-20191.jpg" alt="">
+        
+          {%for product in products%}
+          <div class="col-lg-4 " >
+              <div id="{{product.id}}" class="card mx-auto mb-3 p-1" style="width: 15rem; border-color: black;
+               height: auto;border: width 5px;border-radius: 15px;border: outset;">
+                  <img class="card-img-top" style="height: 250px;" src="{{product.img.url}}" alt="Card image cap">
+                  <div class="card-body">
+                    <small>{{product.description}}</small>
+                    <strong><h5>₹{{product.price}}</h5></strong>
+
+
+                    {%if product|is_in_cart:request.session.cart  %}
+
+                    <div class="row">
+        
+
+                      
+                      <form action="/#{{product.id}}" method="post" class="ml-3" >
+                        {%csrf_token%}
+                        <input hidden type="text" value="{{product.id}}" name="product">
+                        <input hidden type="text" value="True" name="remove">
+                        <input type="submit" class=" btn btn-block " value="-" >
+                      </form>
+                      
+                      {%if request.session.customer%} 
+                      <input type="text" value="{{product|cart_count:request.session.cart }} in cart" 
+                        class="col-6 text-center " readonly >
+                       {%else%}
+                       <input type="button" readonly  value="add to cart" data-toggle="modal" data-target="#exampleModal">            
+                      {%endif%}
+                      <form action="/#{{product.id}}" method="post" >
+                        {%csrf_token%}
+                        <input hidden type="text" value="{{product.id}}" name="product">
+                        <input type="submit" class=" btn btn-block " value="+">
+                      
+                      
+                      
+                      
+                      </form>
+                    
+                  </div>
+
+                  {%else%}
+
+                    <div class="p-0 no-gutters row">
+                      <form action="/" method="post" class="btn btn-block" >
+                        {%csrf_token%}
+                        <input hidden type="text" value="{{product.id}}" name="product">
+                        <input class="btn " id="input_cart" type="submit" 
+                          value="add to cart ">
+                      </form>
+                    </div>
+
+                    {%endif%}
+
+                  </div>
+                </div>
+          </div>
+          {%endfor%}
+      </div>
+    </div>
+
+
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        you need to login first
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="intro"><button type="button" class="btn btn-primary">login</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+  </div>
+</div>
+<div id="hash"> 
+
+</div>
+
+{%endblock%}
